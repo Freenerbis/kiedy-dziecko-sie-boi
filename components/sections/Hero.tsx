@@ -71,9 +71,9 @@ export default function Hero() {
 
           {/* Tag */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
             className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mb-10"
           >
             <motion.span
@@ -90,9 +90,9 @@ export default function Hero() {
               <span key={i} className="block overflow-hidden pb-3">
                 <motion.span
                   className="block"
-                  initial={{ y: '105%', opacity: 0 }}
+                  initial={{ y: '40%', opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.85, delay: 0.25 + i * 0.14, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.4, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
                 >
                   {i === 2 ? (
                     <>złe słowo<span className="text-coral">.</span></>
@@ -104,9 +104,9 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-sage/85 text-xl md:text-2xl leading-relaxed mb-10 max-w-2xl mx-auto"
           >
             Termin u psychologa za 3 miesiące. Twoje dziecko się zamknęło. Ten ebook daje Ci{' '}
@@ -116,9 +116,9 @@ export default function Hero() {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.05 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
           >
             <MagneticButton strength={0.25}>
@@ -140,7 +140,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
             className="flex flex-wrap items-center justify-center gap-5"
           >
             <div className="flex items-center gap-1.5 text-sage/60 text-sm">
