@@ -13,9 +13,7 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizeCss: true,
-  },
+  experimental: {},
 };
 
 module.exports = nextConfig;
