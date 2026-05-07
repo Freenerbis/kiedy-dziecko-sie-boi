@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #1E3D2F;
+  --forest-light: #2D5A47;
+  --sage: #8BB5A0;
+  --coral: #E8614A;
+  --cream: #FAF7F2;
+  --cream-dark: #F0EAE0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--forest);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(232, 97, 74, 0.25);
+  color: #1E3D2F;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--forest-light);
+}
+
+/* Paper background — beige + noise */
+.bg-paper {
+  background-color: #F5EFE6;
+  position: relative;
+}
+.bg-paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-paper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Noise overlay utility */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Smooth page transitions */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .clip-reveal {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  .clip-visible {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+/* Animated underline for links */
+.underline-hover {
+  position: relative;
+}
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #E8614A 0%, #F08070 50%, #E8614A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Scrollbar for marquee container */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card shine sweep on hover */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0s;
+  pointer-events: none;
+}
+.card-shine:hover::after {
+  background-position: 200% 0;
+  transition: background-position 0.5s ease;
+}
+
+/* Gradient border utility — wrap content in a p-[1px] gradient div */
+.gradient-border-coral {
+  background: linear-gradient(135deg, rgba(232,97,74,0.4), rgba(139,181,160,0.3), rgba(30,61,47,0.2));
+}
+
+/* Section divider line */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(30,61,47,0.08), transparent);
+}
+
+/* Floating label badge */
+.label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30,61,47,0.07);
+  border: 1px solid rgba(30,61,47,0.09);
+  color: #1E3D2F;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* Dark variant */
+.label-badge-dark {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.1);
+  color: #8BB5A0;
+}
