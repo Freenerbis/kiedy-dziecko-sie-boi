@@ -9,14 +9,6 @@ import { EBOOK } from '@/lib/constants';
 
 const H1_LINES = ['Boisz się', 'powiedzieć', 'złe słowo.'];
 
-const FLOATERS = [
-  { emoji: '😔', x: '8%',  y: '20%', delay: 1.2, duration: 6 },
-  { emoji: '💬', x: '88%', y: '15%', delay: 1.8, duration: 7 },
-  { emoji: '❤️', x: '92%', y: '65%', delay: 2.4, duration: 8 },
-  { emoji: '😰', x: '5%',  y: '70%', delay: 1.5, duration: 6.5 },
-  { emoji: '🤍', x: '78%', y: '80%', delay: 2.0, duration: 7.5 },
-  { emoji: '💙', x: '15%', y: '85%', delay: 2.8, duration: 9 },
-];
 
 export default function Hero() {
   const mouseX = useMotionValue(0);
@@ -75,19 +67,6 @@ export default function Hero() {
       />
       <div className="absolute inset-0 noise-overlay opacity-[0.025] pointer-events-none" />
 
-      {/* Floating emotki */}
-      {FLOATERS.map(({ emoji, x, y, delay, duration }) => (
-        <motion.div
-          key={emoji + x}
-          className="absolute pointer-events-none select-none text-2xl"
-          style={{ left: x, top: y }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: [0, 0.35, 0.35, 0], y: [20, 0, -30, -60] }}
-          transition={{ duration, delay, repeat: Infinity, repeatDelay: duration * 0.4, ease: 'easeInOut' }}
-        >
-          {emoji}
-        </motion.div>
-      ))}
 
       <Container className="relative z-10 py-20 md:py-28 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
