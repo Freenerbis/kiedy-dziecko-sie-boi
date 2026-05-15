@@ -148,20 +148,48 @@ export default function Testimonials() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
         >
-          {STATS.map((stat, i) => (
+          {[
+            { ...STATS[0], icon: '👩', accent: '#8BB5A0', label2: 'mam nie czeka biernie' },
+            { ...STATS[1], icon: '⭐', accent: '#E8C84A', label2: 'średnia ocena' },
+            { ...STATS[2], icon: '🛡️', accent: '#7AB5E8', label2: 'gwarancji zwrotu' },
+            { ...STATS[3], icon: '💬', accent: '#E8614A', label2: 'czuje się bezradnie' },
+          ].map((stat, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -4, scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="relative bg-forest rounded-2xl p-6 text-center overflow-hidden group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+              whileHover={{ y: -6, scale: 1.04 }}
+              style={{ transition: 'box-shadow 0.3s' }}
+              className="relative bg-forest rounded-2xl p-5 text-center overflow-hidden group cursor-default"
             >
-              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-sage/50 to-transparent group-hover:via-coral/60 transition-all duration-400" />
-              <div className="relative z-10">
-                <div className="font-display text-3xl md:text-4xl text-white font-bold leading-none mb-2">
+              {/* Glow blob */}
+              <div
+                className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+                style={{ background: stat.accent }}
+              />
+              {/* Top line accent */}
+              <div
+                className="absolute inset-x-0 top-0 h-[3px] rounded-t-2xl opacity-70"
+                style={{ background: `linear-gradient(90deg, transparent, ${stat.accent}, transparent)` }}
+              />
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                {/* Icon */}
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-base mb-1"
+                  style={{ background: `${stat.accent}22`, border: `1px solid ${stat.accent}44` }}
+                >
+                  {stat.icon}
+                </div>
+                {/* Number */}
+                <div className="font-display text-3xl md:text-4xl text-white font-bold leading-none">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="w-6 h-px bg-sage/25 mx-auto mb-2" />
-                <div className="text-sage/70 text-xs md:text-sm leading-snug">{stat.label}</div>
+                {/* Divider */}
+                <div className="w-8 h-px mx-auto" style={{ background: `${stat.accent}50` }} />
+                {/* Label */}
+                <div className="text-sage/70 text-xs md:text-sm leading-snug">{stat.label2}</div>
               </div>
             </motion.div>
           ))}
