@@ -2,7 +2,7 @@
 
 import { Check, ShieldCheck, Download, Clock } from 'lucide-react';
 import Container from '@/components/ui/Container';
-import { EBOOK, PRICING_FEATURES, BONUS } from '@/lib/constants';
+import { EBOOK, PRICING_FEATURES } from '@/lib/constants';
 
 export default function Pricing() {
   return (
@@ -92,32 +92,15 @@ export default function Pricing() {
                     <span className="text-forest/70">Ebook (90–110 stron, 16 rozdziałów)</span>
                     <span className="text-forest/50 line-through text-xs mt-0.5">127 zł</span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-forest/70">Bonus: Telefon SOS (20 gotowych zdań)</span>
-                    <span className="text-forest/50 line-through text-xs mt-0.5">49 zł</span>
-                  </div>
                   <div className="border-t border-sage/20 pt-2 flex justify-between font-bold">
-                    <span className="text-forest text-sm">Łączna wartość</span>
-                    <span className="text-forest/50 line-through text-sm">176 zł</span>
+                    <span className="text-forest text-sm">Wartość regularna</span>
+                    <span className="text-forest/50 line-through text-sm">127 zł</span>
                   </div>
                   <div className="flex justify-between font-black">
                     <span className="text-forest">Ty płacisz dziś</span>
                     <span className="text-coral text-lg">74 zł</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Bonus box */}
-              <div className="mb-8 rounded-2xl border-2 border-dashed border-coral/30 bg-coral/5 p-5">
-                <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <span className="text-forest font-bold text-sm">🎁 Bonus: {BONUS.title}</span>
-                  <span className="text-[11px] bg-coral/15 text-coral font-semibold px-2 py-0.5 rounded-full">
-                    gratis
-                  </span>
-                </div>
-                <p className="text-forest/55 text-xs leading-relaxed">
-                  {BONUS.description}
-                </p>
               </div>
 
               {/* CTA */}

@@ -150,9 +150,9 @@ export default function ExitIntentPopup() {
 
                 {/* Value reminder */}
                 <div className="flex items-center justify-between bg-sage/10 rounded-xl px-4 py-2.5 mb-4 text-xs">
-                  <span className="text-forest/60">Ebook + bonus Telefon SOS</span>
+                  <span className="text-forest/60">Ebook — 16 rozdziałów</span>
                   <div className="flex items-center gap-2">
-                    <span className="text-forest/40 line-through">176 zł</span>
+                    <span className="text-forest/40 line-through">127 zł</span>
                     <span className="text-coral font-bold text-sm">74 zł</span>
                   </div>
                 </div>
