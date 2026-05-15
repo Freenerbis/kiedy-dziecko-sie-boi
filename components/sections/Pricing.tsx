@@ -115,9 +115,15 @@ export default function Pricing() {
                     gratis
                   </span>
                 </div>
-                <p className="text-forest/55 text-xs leading-relaxed">
+                <p className="text-forest/55 text-xs leading-relaxed mb-3">
                   {BONUS.description}
                 </p>
+                <a
+                  href="/bonus"
+                  className="inline-flex items-center gap-1.5 text-coral text-xs font-semibold hover:underline"
+                >
+                  <span>→ Zobacz przedsmak bonusu</span>
+                </a>
               </div>
 
               {/* CTA */}
