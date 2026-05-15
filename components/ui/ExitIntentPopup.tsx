@@ -159,7 +159,7 @@ export default function ExitIntentPopup() {
 
                 {/* CTA */}
                 <a
-                  href="#oferta"
+                  href="https://buy.stripe.com/cNi28r3nn2Z7cJr500a7C00"
                   onClick={dismiss}
                   className="block w-full text-center bg-coral hover:bg-coral-dark text-white font-bold text-base py-4 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-coral/30 mb-3"
                 >

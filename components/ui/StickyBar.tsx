@@ -57,7 +57,7 @@ export default function StickyBar() {
               {/* Right: CTA + dismiss */}
               <div className="flex items-center gap-3 flex-shrink-0">
                 <a
-                  href="#oferta"
+                  href="https://buy.stripe.com/cNi28r3nn2Z7cJr500a7C00"
                   onClick={() => setVisible(false)}
                   className="inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-coral/30 whitespace-nowrap"
                 >

@@ -7,7 +7,7 @@ export const EBOOK = {
   chapters: 16,
   guarantee: 30,
   ctaText: 'Pobieram ebooka — 74 zł',
-  buyLink: '#oferta',
+  buyLink: 'https://buy.stripe.com/cNi28r3nn2Z7cJr500a7C00',
 };
 
 export const PROBLEMS = [

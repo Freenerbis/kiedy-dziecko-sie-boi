@@ -72,7 +72,7 @@ export default function FinalCTA() {
           {/* CTA */}
           <MagneticButton strength={0.2} className="mb-6">
             <a
-              href="#oferta"
+              href="https://buy.stripe.com/cNi28r3nn2Z7cJr500a7C00"
               className="group relative inline-flex items-center gap-3 bg-coral hover:bg-coral-dark text-white font-bold text-lg md:text-xl px-10 py-5 rounded-2xl transition-all duration-200 hover:scale-105 active:scale-95 shadow-2xl shadow-coral/40 animate-pulse-glow overflow-hidden"
             >
               <Download className="w-5 h-5 relative z-10" />
