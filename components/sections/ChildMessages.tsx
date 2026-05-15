@@ -41,6 +41,12 @@ const ZOSIA_REPLIES = [
   { type: 'seen', text: 'Wyświetlono' },
   { type: 'text', text: '...' },
   { type: 'text', text: 'nie wiem co chcesz żebym powiedziała' },
+  { type: 'text', text: 'zostaw mnie proszę' },
+  { type: 'seen', text: 'Wyświetlono' },
+  { type: 'text', text: 'i tak nie rozumiesz' },
+  { type: 'text', text: 'nie masz pojęcia o niczym' },
+  { type: 'seen', text: 'Wyświetlono' },
+  { type: 'text', text: 'nic mi nie jest, przestań' },
 ];
 
 const SIGNALS = [
