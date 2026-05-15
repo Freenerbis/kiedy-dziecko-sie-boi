@@ -1,10 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, ShieldCheck, Heart } from 'lucide-react';
+import { ShieldCheck, Heart } from 'lucide-react';
 import Link from 'next/link';
 
-const DOWNLOAD_URL = '/Kiedy_Twoje_Dziecko_Sie_Boi.pdf';
 
 export default function SukcesPage() {
   return (
@@ -46,40 +45,43 @@ export default function SukcesPage() {
           </p>
         </motion.div>
 
-        {/* Download button */}
-        <motion.a
-          href={DOWNLOAD_URL}
-          download
+        {/* Email info */}
+        <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.5 }}
-          className="group relative w-full inline-flex items-center justify-center gap-3 bg-coral hover:bg-coral-dark text-white font-bold text-lg py-4 px-8 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-coral/35 overflow-hidden mb-4"
+          className="bg-sage/10 border border-sage/20 rounded-2xl px-6 py-5 mb-6"
         >
-          <Download className="w-5 h-5" />
-          <span>Pobierz ebook PDF</span>
-          <span className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-        </motion.a>
+          <p className="text-forest text-base font-semibold mb-1">📧 Sprawdź swoją skrzynkę</p>
+          <p className="text-forest/60 text-sm leading-relaxed">
+            Wysłaliśmy Ci email z linkiem do pobrania ebooka. Powinien przyjść w ciągu <strong>kilku minut</strong>.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="bg-cream rounded-xl px-5 py-4 mb-6 text-left"
+        >
+          <p className="text-forest/50 text-xs leading-relaxed">
+            Nie widzisz maila? Sprawdź folder <strong>spam</strong> lub <strong>oferty</strong>. Jeśli nadal nic nie ma — napisz na{' '}
+            <a href="mailto:kontakt@pomocemocjonalna.pl" className="text-coral underline">
+              kontakt@pomocemocjonalna.pl
+            </a>
+          </p>
+        </motion.div>
 
         {/* Trust */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="flex items-center justify-center gap-2 text-forest/40 text-xs mb-8"
+          transition={{ delay: 0.8 }}
+          className="flex items-center justify-center gap-2 text-forest/40 text-xs"
         >
           <ShieldCheck className="w-3.5 h-3.5 text-sage" />
           30 dni gwarancji zwrotu · kontakt@pomocemocjonalna.pl
         </motion.div>
-
-        {/* Divider */}
-        <div className="border-t border-cream-deeper pt-6">
-          <p className="text-forest/50 text-sm mb-1">
-            📧 Mail z linkiem powinien przyjść w ciągu kilku minut.
-          </p>
-          <p className="text-forest/35 text-xs">
-            Sprawdź też folder spam jeśli nie widzisz wiadomości.
-          </p>
-        </div>
 
         {/* Back link */}
         <motion.div
