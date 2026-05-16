@@ -7,12 +7,17 @@ import Link from 'next/link';
 
 export default function SukcesPage() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Purchase', {
-        value: 74,
-        currency: 'PLN',
-      });
-    }
+    const trackPurchase = () => {
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Purchase', {
+          value: 74,
+          currency: 'PLN',
+        });
+      } else {
+        setTimeout(trackPurchase, 500);
+      }
+    };
+    trackPurchase();
   }, []);
 
   return (
