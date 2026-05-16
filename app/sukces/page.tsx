@@ -1,11 +1,20 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Heart } from 'lucide-react';
 import Link from 'next/link';
 
-
 export default function SukcesPage() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        value: 74,
+        currency: 'PLN',
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-forest flex items-center justify-center px-4 relative overflow-hidden">
 
